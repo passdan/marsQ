@@ -39,3 +39,4 @@ nextflow run main.nf \
         --ref_genomes_folder "${workdir}/refs" \
         -resume
 ```
+refs is a folder containing genomes to map against. One file per genome. A useful tool to download a range of sequences is [genome_updater](https://github.com/pirovc/genome_updater)
