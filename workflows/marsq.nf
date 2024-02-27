@@ -1,44 +1,5 @@
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    PRINT PARAMS SUMMARY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-include { paramsSummaryLog; paramsSummaryMap } from 'plugin/nf-validation'
-
-def logo = NfcoreTemplate.logo(workflow, params.monochrome_logs)
-def citation = '\n' + WorkflowMain.citation(workflow) + '\n'
-def summary_params = paramsSummaryMap(workflow)
-
-// Print parameter summary log to screen
-log.info logo + paramsSummaryLog(workflow) + citation
-
-WorkflowMarsq.initialise(params, log)
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    CONFIG FILES
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-ch_multiqc_config          = Channel.fromPath("$projectDir/assets/multiqc_config.yml", checkIfExists: true)
-ch_multiqc_custom_config   = params.multiqc_config ? Channel.fromPath( params.multiqc_config, checkIfExists: true ) : Channel.empty()
-ch_multiqc_logo            = params.multiqc_logo   ? Channel.fromPath( params.multiqc_logo, checkIfExists: true ) : Channel.empty()
-ch_multiqc_custom_methods_description = params.multiqc_methods_description ? file(params.multiqc_methods_description, checkIfExists: true) : file("$projectDir/assets/methods_description_template.yml", checkIfExists: true)
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT LOCAL MODULES/SUBWORKFLOWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-//
-// SUBWORKFLOW: Consisting of a mix of local and nf-core/modules
-//
-include { INPUT_CHECK } from '../subworkflows/local/input_check'
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     IMPORT NF-CORE MODULES/SUBWORKFLOWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
@@ -46,9 +7,18 @@ include { INPUT_CHECK } from '../subworkflows/local/input_check'
 //
 // MODULE: Installed directly from nf-core/modules
 //
-include { FASTQC                      } from '../modules/nf-core/fastqc/main'
-include { MULTIQC                     } from '../modules/nf-core/multiqc/main'
-include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoftwareversions/main'
+include { FASTQC        } from '../modules/nf-core/fastqc/main'
+include { FASTP         } from '../modules/nf-core/fastp/main'
+include { MULTIQC       } from '../modules/nf-core/multiqc/main'
+include { BBMAP_INDEX   } from '../modules/nf-core/bbmap/index/main'
+include { BBMAP_BBSPLIT } from '../modules/nf-core/bbmap/bbsplit/main'
+include { BBMAP_ALIGN   } from '../modules/nf-core/bbmap/align/main'
+include { SAMTOOLS_SORT   } from '../modules/nf-core/samtools/sort/main'
+include { SAMTOOLS_INDEX   } from '../modules/nf-core/samtools/index/main'
+
+include { ConcatenateGenomes   } from '../modules/local/bb_index_functions'
+include { SplitBamAndStats; SplitBam; BamStats } from '../modules/local/SplitBamAndStats'
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,72 +29,96 @@ include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoft
 // Info required for completion email and summary
 def multiqc_report = []
 
-workflow MARSQ {
 
-    ch_versions = Channel.empty()
 
-    //
-    // SUBWORKFLOW: Read in samplesheet, validate and stage input files
-    //
-    INPUT_CHECK (
-        file(params.input)
-    )
-    ch_versions = ch_versions.mix(INPUT_CHECK.out.versions)
-    // TODO: OPTIONAL, you can use nf-validation plugin to create an input channel from the samplesheet with Channel.fromSamplesheet("input")
-    // See the documentation https://nextflow-io.github.io/nf-validation/samplesheets/fromSamplesheet/
-    // ! There is currently no tooling to help you write a sample sheet schema
+workflow MARSQ_FULL {
+    take:
+        read_pairs_ch
+    
+    main:
+        //
+        // MODULE: Run FastQC
+        //
+        FASTQC ( read_pairs_ch )
 
-    //
-    // MODULE: Run FastQC
-    //
-    FASTQC (
-        INPUT_CHECK.out.reads
-    )
-    ch_versions = ch_versions.mix(FASTQC.out.versions.first())
+        //
+        // MODULE: trim reads with fastp
+        //
 
-    CUSTOM_DUMPSOFTWAREVERSIONS (
-        ch_versions.unique().collectFile(name: 'collated_versions.yml')
-    )
+        FASTP ( read_pairs_ch, [], false, false )
 
-    //
-    // MODULE: MultiQC
-    //
-    workflow_summary    = WorkflowMarsq.paramsSummaryMultiqc(workflow, summary_params)
-    ch_workflow_summary = Channel.value(workflow_summary)
-
-    methods_description    = WorkflowMarsq.methodsDescriptionText(workflow, ch_multiqc_custom_methods_description, params)
-    ch_methods_description = Channel.value(methods_description)
-
-    ch_multiqc_files = Channel.empty()
-    ch_multiqc_files = ch_multiqc_files.mix(ch_workflow_summary.collectFile(name: 'workflow_summary_mqc.yaml'))
-    ch_multiqc_files = ch_multiqc_files.mix(ch_methods_description.collectFile(name: 'methods_description_mqc.yaml'))
-    ch_multiqc_files = ch_multiqc_files.mix(CUSTOM_DUMPSOFTWAREVERSIONS.out.mqc_yml.collect())
-    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.collect{it[1]}.ifEmpty([]))
-
-    MULTIQC (
-        ch_multiqc_files.collect(),
-        ch_multiqc_config.toList(),
-        ch_multiqc_custom_config.toList(),
-        ch_multiqc_logo.toList()
-    )
-    multiqc_report = MULTIQC.out.report.toList()
+        //
+        // BBMAP ALIGN. Align the split FASTQ files back to their respective reference genomes.
+        //
+        BBMAP_ALIGN ( FASTP.out.reads, bbmap_index )
 }
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    COMPLETION EMAIL AND SUMMARY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
 
-workflow.onComplete {
-    if (params.email || params.email_on_fail) {
-        NfcoreTemplate.email(workflow, params, summary_params, projectDir, log, multiqc_report)
-    }
-    NfcoreTemplate.dump_parameters(workflow, params)
-    NfcoreTemplate.summary(workflow, params, log)
-    if (params.hook_url) {
-        NfcoreTemplate.IM_notification(workflow, params, summary_params, projectDir, log)
-    }
+workflow MARSQ_BBSPLIT {
+    take:
+        read_pairs_ch
+    
+    main:
+        // Reference genomes
+        if (params.generate_DB) {
+            // Generate BBmap index
+            BBSPLIT_INDEX( params.ref_genomes_folder )
+            bbsplit_index = BBSPLIT_INDEX.out.index_ch
+        } 
+        else {
+            bbsplit_index = params.ref_genomes_index
+        }
+        //
+        // MODULE: Run FastQC
+        //
+        FASTQC ( read_pairs_ch )
+
+        //
+        // MODULE: trim reads with fastp
+        //
+
+        FASTP ( read_pairs_ch, [], false, false )
+
+        //
+        // BBMAP SPLIT. Call BBMap with the index once per sample
+        //
+        BBMAP_BBSPLIT ( FASTP.out.reads, bbsplit_index, [], [[],[]], false )
+
+}
+
+workflow MARSQ_MAP_ONLY {
+    take:
+        read_pairs_ch
+
+    main:    
+        // Reference genomes
+        if (params.generate_DB) {
+            // Concatinate genomes
+            ConcatenateGenomes( params.ref_genomes_folder )
+
+            // Generate BBmap index
+            BBMAP_INDEX( ConcatenateGenomes.out.ref_genomes_fasta )
+            bbmap_index = BBMAP_INDEX.out.index
+        } 
+        else {
+            bbmap_index = params.ref_genomes_index
+        }
+
+        //
+        // BBMAP ALIGN. Align the split FASTQ files back to their respective reference genomes.
+        //
+        BBMAP_ALIGN ( read_pairs_ch, bbmap_index )
+        SAMTOOLS_SORT( BBMAP_ALIGN.out.bam)
+        SAMTOOLS_INDEX( SAMTOOLS_SORT.out.bam)
+
+        //
+        // Splits the mapped reads per genome
+        //
+
+        SplitBamAndStats( SAMTOOLS_SORT.out.bam, params.ref_genomes_folder )
+
+        //BamStats( SplitBam.out.split_genomes)
+        
 }
 
 /*

@@ -1,0 +1,142 @@
+Some Usable Environment Variables:
+=================================
+hostname=f02-17.cluster
+$SLURM_JOB_ID=414240
+$SLURM_NTASKS=1
+$SLURM_NTASKS_PER_NODE=1
+$SLURM_CPUS_PER_TASK=2
+$SLURM_JOB_CPUS_PER_NODE=2
+$SLURM_MEM_PER_NODE=4000
+Loading nextflow/23.04.1
+  Loading requirement: java/17.0.1
+Loading singularity/3.8.7
+  Loading requirement: go/1.17.2
+N E X T F L O W  ~  version 23.04.1
+Launching `main.nf` [big_mercator] DSL2 - revision: 5f0e20e632
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : /tmp/wrex_marsq/fastq/*{R1,R2}.fastq.gz
+ output       : /tmp/wrex_marsq/results
+ ref genomes  : /tmp/wrex_marsq/refs
+ pipeline     : map_only
+ 
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[c9/87c4fb] process > MARSQ_MAP_ONLY:ConcatenateG... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[c9/87c4fb] process > MARSQ_MAP_ONLY:ConcatenateG... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:ConcatenateGenomes'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:ConcatenateGenomes` terminated with an error exit status (1)
+
+Command executed:
+
+  cat refs/*.fna > concatenated_reference.fasta
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: 'refs/*.fna': No such file or directory
+
+Work dir:
+  /tmp/wrex_marsq/work/c9/87c4fb94b2e8dfe8879e98cd6ffb0b
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (1)
+[c9/87c4fb] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, failed: 1 ✘
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+Execution cancelled -- Finishing pending tasks before exit
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:ConcatenateGenomes'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:ConcatenateGenomes` terminated with an error exit status (1)
+
+Command executed:
+
+  cat refs/*.fna > concatenated_reference.fasta
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: 'refs/*.fna': No such file or directory
+
+Work dir:
+  /tmp/wrex_marsq/work/c9/87c4fb94b2e8dfe8879e98cd6ffb0b
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (1)
+[c9/87c4fb] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, failed: 1 ✘
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+Execution cancelled -- Finishing pending tasks before exit
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:ConcatenateGenomes'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:ConcatenateGenomes` terminated with an error exit status (1)
+
+Command executed:
+
+  cat refs/*.fna > concatenated_reference.fasta
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: 'refs/*.fna': No such file or directory
+
+Work dir:
+  /tmp/wrex_marsq/work/c9/87c4fb94b2e8dfe8879e98cd6ffb0b
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+
+ -- Check '.nextflow.log' file for details
+

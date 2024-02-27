@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	c9/87c4fb	414241	MARSQ_MAP_ONLY:ConcatenateGenomes	FAILED	1	2023-11-22 13:26:11.176	9.5s	3ms	-	-	-	-	-

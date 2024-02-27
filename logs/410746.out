@@ -1,0 +1,590 @@
+Some Usable Environment Variables:
+=================================
+hostname=f02-17.cluster
+$SLURM_JOB_ID=410746
+$SLURM_NTASKS=1
+$SLURM_NTASKS_PER_NODE=1
+$SLURM_CPUS_PER_TASK=2
+$SLURM_JOB_CPUS_PER_NODE=2
+$SLURM_MEM_PER_NODE=4000
+Loading nextflow/23.04.1
+  Loading requirement: java/17.0.1
+Loading singularity/3.8.7
+  Loading requirement: go/1.17.2
+N E X T F L O W  ~  version 23.04.1
+Launching `main.nf` [pedantic_becquerel] DSL2 - revision: 5f0e20e632
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : /tmp/marsq/fastq/*{R1,R2}.fastq.gz
+ output       : /tmp/marsq/results
+ ref genomes  : /tmp/marsq/refs
+ pipeline     : map_only
+ 
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 2 of 2, cached: 2
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[06/42eb84] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[06/42eb84] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[06/42eb84] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)'
+
+Caused by:
+  Missing output file(s) `FF-PS_April2023_S48_null.bam` expected by process `MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)`
+
+Command executed:
+
+  samtools view -@12 -F 4 -o FF-PS_April2023_S48.sam FF-PS_April2023_S48_sort.bam
+  samtools view -H -o FF-PS_April2023_S48_header.sam FF-PS_April2023_S48_sort.bam
+  
+  mkdir FF-PS_April2023_S48_mapped_genomes
+  mkdir FF-PS_April2023_S48_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+      head -n1 FF-PS_April2023_S48_header.sam > FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@SQ.*${genome_base}" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@PG" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF-PS_April2023_S48" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      print >> genome_filename
+  }' "FF-PS_April2023_S48.sam"
+  
+  samtools coverage FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF-PS_April2023_S48_${genome_base}.bam FF-PS_April2023_S48_${genome_base}.sam
+  ##rm FF-PS_April2023_S48_${genome_base}.sam
+
+Command exit status:
+  0
+
+Command output:
+  (empty)
+
+Command error:
+  [W::sam_parse1] unrecognized mate reference name "GCF_000982825.1_%_NZ_CP011047.1 Cr"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703866.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000003."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000367925.1_%_NZ_KB849170.1 Ac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000039."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025135.1_%_NZ_AP012323.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001707755.1_%_NZ_MBDL01000009."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_000432435.1_%_HF993120.1 Eubac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001591765.1_%_NZ_BCVN01000018."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_008107625.1_%_NZ_SDKK01000001."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_900112995.1_%_FONU01000004.1 L"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_003268905.1_%_QLTU01000005.1 U"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_003024685.1_%_NZ_PYLQ01000002."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000010."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703863.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000020605.1_%_NC_012781.1 Agat"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025195.1_%_NZ_AP012325.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000001."...; treated as unmapped
+
+Work dir:
+  /tmp/marsq/work/06/42eb84ce7a42d8ade820f8546a9273
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[06/42eb84] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 33%] 1 of 3, failed: 1
+Execution cancelled -- Finishing pending tasks before exit
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)'
+
+Caused by:
+  Missing output file(s) `FF-PS_April2023_S48_null.bam` expected by process `MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)`
+
+Command executed:
+
+  samtools view -@12 -F 4 -o FF-PS_April2023_S48.sam FF-PS_April2023_S48_sort.bam
+  samtools view -H -o FF-PS_April2023_S48_header.sam FF-PS_April2023_S48_sort.bam
+  
+  mkdir FF-PS_April2023_S48_mapped_genomes
+  mkdir FF-PS_April2023_S48_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+      head -n1 FF-PS_April2023_S48_header.sam > FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@SQ.*${genome_base}" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@PG" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF-PS_April2023_S48" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      print >> genome_filename
+  }' "FF-PS_April2023_S48.sam"
+  
+  samtools coverage FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF-PS_April2023_S48_${genome_base}.bam FF-PS_April2023_S48_${genome_base}.sam
+  ##rm FF-PS_April2023_S48_${genome_base}.sam
+
+Command exit status:
+  0
+
+Command output:
+  (empty)
+
+Command error:
+  [W::sam_parse1] unrecognized mate reference name "GCF_000982825.1_%_NZ_CP011047.1 Cr"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703866.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000003."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000367925.1_%_NZ_KB849170.1 Ac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000039."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025135.1_%_NZ_AP012323.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001707755.1_%_NZ_MBDL01000009."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_000432435.1_%_HF993120.1 Eubac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001591765.1_%_NZ_BCVN01000018."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_008107625.1_%_NZ_SDKK01000001."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_900112995.1_%_FONU01000004.1 L"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_003268905.1_%_QLTU01000005.1 U"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_003024685.1_%_NZ_PYLQ01000002."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000010."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703863.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000020605.1_%_NC_012781.1 Agat"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025195.1_%_NZ_AP012325.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000001."...; treated as unmapped
+
+Work dir:
+  /tmp/marsq/work/06/42eb84ce7a42d8ade820f8546a9273
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[b6/f04788] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 66%] 2 of 3, failed: 2
+Execution cancelled -- Finishing pending tasks before exit
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)'
+
+Caused by:
+  Missing output file(s) `FF-PS_April2023_S48_null.bam` expected by process `MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)`
+
+Command executed:
+
+  samtools view -@12 -F 4 -o FF-PS_April2023_S48.sam FF-PS_April2023_S48_sort.bam
+  samtools view -H -o FF-PS_April2023_S48_header.sam FF-PS_April2023_S48_sort.bam
+  
+  mkdir FF-PS_April2023_S48_mapped_genomes
+  mkdir FF-PS_April2023_S48_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+      head -n1 FF-PS_April2023_S48_header.sam > FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@SQ.*${genome_base}" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@PG" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF-PS_April2023_S48" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      print >> genome_filename
+  }' "FF-PS_April2023_S48.sam"
+  
+  samtools coverage FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF-PS_April2023_S48_${genome_base}.bam FF-PS_April2023_S48_${genome_base}.sam
+  ##rm FF-PS_April2023_S48_${genome_base}.sam
+
+Command exit status:
+  0
+
+Command output:
+  (empty)
+
+Command error:
+  [W::sam_parse1] unrecognized mate reference name "GCF_000982825.1_%_NZ_CP011047.1 Cr"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703866.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000003."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000367925.1_%_NZ_KB849170.1 Ac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000039."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025135.1_%_NZ_AP012323.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001707755.1_%_NZ_MBDL01000009."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_000432435.1_%_HF993120.1 Eubac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001591765.1_%_NZ_BCVN01000018."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_008107625.1_%_NZ_SDKK01000001."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_900112995.1_%_FONU01000004.1 L"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_003268905.1_%_QLTU01000005.1 U"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_003024685.1_%_NZ_PYLQ01000002."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000010."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703863.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000020605.1_%_NC_012781.1 Agat"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025195.1_%_NZ_AP012325.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000001."...; treated as unmapped
+
+Work dir:
+  /tmp/marsq/work/06/42eb84ce7a42d8ade820f8546a9273
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[41/278739] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 3 of 3, failed: 3 ✘
+
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)'
+
+Caused by:
+  Missing output file(s) `FF-PS_April2023_S48_null.bam` expected by process `MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)`
+
+Command executed:
+
+  samtools view -@12 -F 4 -o FF-PS_April2023_S48.sam FF-PS_April2023_S48_sort.bam
+  samtools view -H -o FF-PS_April2023_S48_header.sam FF-PS_April2023_S48_sort.bam
+  
+  mkdir FF-PS_April2023_S48_mapped_genomes
+  mkdir FF-PS_April2023_S48_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+      head -n1 FF-PS_April2023_S48_header.sam > FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@SQ.*${genome_base}" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@PG" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF-PS_April2023_S48" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      print >> genome_filename
+  }' "FF-PS_April2023_S48.sam"
+  
+  samtools coverage FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF-PS_April2023_S48_${genome_base}.bam FF-PS_April2023_S48_${genome_base}.sam
+  ##rm FF-PS_April2023_S48_${genome_base}.sam
+
+Command exit status:
+  0
+
+Command output:
+  (empty)
+
+Command error:
+  [W::sam_parse1] unrecognized mate reference name "GCF_000982825.1_%_NZ_CP011047.1 Cr"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703866.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000003."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000367925.1_%_NZ_KB849170.1 Ac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000039."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025135.1_%_NZ_AP012323.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001707755.1_%_NZ_MBDL01000009."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_000432435.1_%_HF993120.1 Eubac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001591765.1_%_NZ_BCVN01000018."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_008107625.1_%_NZ_SDKK01000001."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_900112995.1_%_FONU01000004.1 L"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_003268905.1_%_QLTU01000005.1 U"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_003024685.1_%_NZ_PYLQ01000002."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000010."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703863.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000020605.1_%_NC_012781.1 Agat"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025195.1_%_NZ_AP012325.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000001."...; treated as unmapped
+
+Work dir:
+  /tmp/marsq/work/06/42eb84ce7a42d8ade820f8546a9273
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (3)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3, cached: 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3, cached: 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3, cached: 3 ✔
+[41/278739] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 3 of 3, failed: 3 ✘
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)'
+
+Caused by:
+  Missing output file(s) `FF-PS_April2023_S48_null.bam` expected by process `MARSQ_MAP_ONLY:SplitBamAndStats (FF-PS_April2023_S48)`
+
+Command executed:
+
+  samtools view -@12 -F 4 -o FF-PS_April2023_S48.sam FF-PS_April2023_S48_sort.bam
+  samtools view -H -o FF-PS_April2023_S48_header.sam FF-PS_April2023_S48_sort.bam
+  
+  mkdir FF-PS_April2023_S48_mapped_genomes
+  mkdir FF-PS_April2023_S48_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+      head -n1 FF-PS_April2023_S48_header.sam > FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@SQ.*${genome_base}" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+      grep "^@PG" FF-PS_April2023_S48_header.sam >> FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF-PS_April2023_S48" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      print >> genome_filename
+  }' "FF-PS_April2023_S48.sam"
+  
+  samtools coverage FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF-PS_April2023_S48_mapped_genomes/FF-PS_April2023_S48_${genome_base}.sam > FF-PS_April2023_S48_mapped_genomes_stats/FF-PS_April2023_S48_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF-PS_April2023_S48_${genome_base}.bam FF-PS_April2023_S48_${genome_base}.sam
+  ##rm FF-PS_April2023_S48_${genome_base}.sam
+
+Command exit status:
+  0
+
+Command output:
+  (empty)
+
+Command error:
+  [W::sam_parse1] unrecognized mate reference name "GCF_000982825.1_%_NZ_CP011047.1 Cr"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703866.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000003."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000367925.1_%_NZ_KB849170.1 Ac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000039."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025135.1_%_NZ_AP012323.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001707755.1_%_NZ_MBDL01000009."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_000432435.1_%_HF993120.1 Eubac"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001591765.1_%_NZ_BCVN01000018."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_008107625.1_%_NZ_SDKK01000001."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_900112995.1_%_FONU01000004.1 L"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCA_003268905.1_%_QLTU01000005.1 U"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_003024685.1_%_NZ_PYLQ01000002."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703855.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000005."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000010."...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703863.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000020605.1_%_NC_012781.1 Agat"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_001025195.1_%_NZ_AP012325.1 Bi"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_000157935.1_%_NZ_GG703852.1 Se"...; treated as unmapped
+  [W::sam_parse1] unrecognized mate reference name "GCF_002224675.1_%_NZ_NMPZ01000001."...; treated as unmapped
+
+Work dir:
+  /tmp/marsq/work/06/42eb84ce7a42d8ade820f8546a9273
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+
+

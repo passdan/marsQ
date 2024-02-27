@@ -1,0 +1,986 @@
+Some Usable Environment Variables:
+=================================
+hostname=f02-17.cluster
+$SLURM_JOB_ID=414508
+$SLURM_NTASKS=1
+$SLURM_NTASKS_PER_NODE=1
+$SLURM_CPUS_PER_TASK=2
+$SLURM_JOB_CPUS_PER_NODE=2
+$SLURM_MEM_PER_NODE=4000
+Loading nextflow/23.04.1
+  Loading requirement: java/17.0.1
+Loading singularity/3.8.7
+  Loading requirement: go/1.17.2
+N E X T F L O W  ~  version 23.04.1
+Launching `main.nf` [tiny_leavitt] DSL2 - revision: 5f0e20e632
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : /tmp/wrex_marsq/fastq/*{R1,R2}.fastq.gz
+ output       : /tmp/wrex_marsq/results
+ ref genomes  : /tmp/wrex_marsq/refs
+ pipeline     : map_only
+ 
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (2)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (2)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (2)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [  0%] 0 of 1 ✔
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (4)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[4c/65ce06] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (6)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2a/97782b] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (9)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[e0/8f28b2] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (10)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[9d/50bc91] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (18)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (18)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (18)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[bc/2ccde7] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  5%] 1 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (19)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  5%] 1 of 17
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (20)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[4c/65ce06] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 11%] 2 of 17
+[5f/3c0e39] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (20)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[4c/65ce06] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 11%] 2 of 17
+[5f/3c0e39] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (20)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[45/2318d3] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 17%] 3 of 17
+[5f/3c0e39] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (21)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[45/2318d3] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 17%] 3 of 17
+[4f/849ed7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (22)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2a/97782b] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 23%] 4 of 17
+[e5/fc19dd] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 4
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (22)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[7c/951fbd] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 29%] 5 of 17
+[e5/fc19dd] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 5
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (23)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[7c/951fbd] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 29%] 5 of 17
+[e0/bac075] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 5
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (23)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[90/421852] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 35%] 6 of 17
+[e0/bac075] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 6
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (24)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[90/421852] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 35%] 6 of 17
+[d2/90421d] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 6
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (25)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[4a/a7f551] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 41%] 7 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 7
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (25)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[e0/8f28b2] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 47%] 8 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 8
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (26)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[e0/8f28b2] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 47%] 8 of 17
+[54/30e47f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 8
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (27)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[9d/50bc91] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 52%] 9 of 17
+[8c/2b4d97] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 9
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (27)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[17/9fbccb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 58%] 10 of 17
+[8c/2b4d97] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 9
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (28)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[17/9fbccb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 58%] 10 of 17
+[b3/f61eaa] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 10
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (29)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[5f/41b14b] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 64%] 11 of 17
+[7c/018d38] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 11
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (29)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[ce/911967] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 70%] 12 of 17
+[7c/018d38] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 12
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (30)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[ce/911967] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 70%] 12 of 17
+[a3/783e4b] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 12
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (31)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[87/c883fb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 76%] 13 of 17
+[d3/642ab7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 13
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (32)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[3d/0bf91f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 14
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (33)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 14
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (33)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[5f/3c0e39] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  7%] 1 of 14
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (33)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[5f/3c0e39] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  7%] 1 of 14
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 1
+
+executor >  slurm (33)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[4f/849ed7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 14%] 2 of 14
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (34)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[4f/849ed7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 14%] 2 of 14
+[ff/783c71] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (34)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[4f/849ed7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 14%] 2 of 14
+[ff/783c71] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (34)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[4f/849ed7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 14%] 2 of 14
+[ff/783c71] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 1 of 2
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (35)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[4f/849ed7] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 14%] 2 of 14
+[ff/783c71] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 1 of 2
+[7d/4a9848] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (35)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e5/fc19dd] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 21%] 3 of 14
+[ff/783c71] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 33%] 1 of 3
+[7d/4a9848] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (36)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e5/fc19dd] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 21%] 3 of 14
+[48/d2a1f4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 33%] 1 of 3
+[7d/4a9848] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (36)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e5/fc19dd] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 21%] 3 of 14
+[48/d2a1f4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 33%] 1 of 3
+[7d/4a9848] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (36)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e0/bac075] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 28%] 4 of 14
+[48/d2a1f4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 25%] 1 of 4
+[7d/4a9848] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (37)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e0/bac075] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 28%] 4 of 14
+[48/d2a1f4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 25%] 1 of 4
+[77/bb1a02] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 4
+
+executor >  slurm (38)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e0/bac075] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 28%] 4 of 14
+[b9/c4f415] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 2 of 4
+[77/bb1a02] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 4
+
+executor >  slurm (38)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[e0/bac075] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 28%] 4 of 14
+[b9/c4f415] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 2 of 4
+[77/bb1a02] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 4
+
+executor >  slurm (39)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[d2/90421d] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 35%] 5 of 14
+[b9/c4f415] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 40%] 2 of 5
+[d4/e76589] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 5
+
+executor >  slurm (40)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[54/30e47f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 42%] 6 of 14
+[fa/aa75d5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 33%] 2 of 6
+[d4/e76589] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 6
+
+executor >  slurm (41)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[54/30e47f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 42%] 6 of 14
+[b9/c4f415] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 3 of 6
+[38/48bb71] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 6
+
+executor >  slurm (41)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[54/30e47f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 42%] 6 of 14
+[b9/c4f415] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 3 of 6
+[38/48bb71] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 6
+
+executor >  slurm (42)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[25/14fb86] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 82%] 14 of 17
+[54/30e47f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 42%] 6 of 14
+[fa/aa75d5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 4 of 6
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 6
+
+executor >  slurm (42)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[54/30e47f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 42%] 6 of 14
+[fa/aa75d5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 4 of 6
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 6
+
+executor >  slurm (43)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 46%] 7 of 15
+[0f/2298c8] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 57%] 4 of 7
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 7
+
+executor >  slurm (44)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 46%] 7 of 15
+[d1/e89863] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 57%] 4 of 7
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 7
+
+executor >  slurm (44)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 46%] 7 of 15
+[d1/e89863] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 57%] 4 of 7
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 7
+
+executor >  slurm (44)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 46%] 7 of 15
+[0f/2298c8] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 71%] 5 of 7
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 7
+
+executor >  slurm (45)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 46%] 7 of 15
+[0f/2298c8] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 71%] 5 of 7
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 7
+
+executor >  slurm (45)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7f/cc48cb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 46%] 7 of 15
+[0f/2298c8] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 71%] 5 of 7
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 7
+
+executor >  slurm (45)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[8c/2b4d97] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 53%] 8 of 15
+[0f/2298c8] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 55%] 5 of 9
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 9
+
+executor >  slurm (46)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 60%] 9 of 15
+[d1/e89863] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 6 of 9
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 9
+
+executor >  slurm (48)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 60%] 9 of 15
+[ac/ae8864] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 6 of 9
+[df/f2cb25] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 9
+
+executor >  slurm (48)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 60%] 9 of 15
+[ac/ae8864] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 6 of 9
+[df/f2cb25] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 9
+
+executor >  slurm (48)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[a3/783e4b] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 10 of 15
+[ac/ae8864] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 6 of 9
+[df/f2cb25] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 9
+
+executor >  slurm (49)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[a3/783e4b] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 10 of 15
+[ac/ae8864] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 60%] 6 of 10
+[68/b3950b] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 10
+
+executor >  slurm (49)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7c/018d38] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 73%] 11 of 15
+[ac/ae8864] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 54%] 6 of 11
+[68/b3950b] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 11
+
+executor >  slurm (50)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[d4/7a0621] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 88%] 15 of 17
+[7c/018d38] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 73%] 11 of 15
+[e1/1cdc84] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 54%] 6 of 11
+[68/b3950b] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 11
+
+executor >  slurm (51)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[7c/018d38] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 68%] 11 of 16
+[e1/1cdc84] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 54%] 6 of 11
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 11
+
+executor >  slurm (51)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[b3/f61eaa] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[e1/1cdc84] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 6 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (52)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[e1/1cdc84] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 6 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (53)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[f0/680069] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 58%] 7 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (53)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[f0/680069] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 58%] 7 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (53)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[f0/680069] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 8 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (54)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[ca/c0b656] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 8 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (54)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 75%] 12 of 16
+[ca/c0b656] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 8 of 12
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 12
+
+executor >  slurm (55)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[3d/0bf91f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 81%] 13 of 16
+[ca/c0b656] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 76%] 10 of 13
+[bc/c1a9c5] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 13
+
+executor >  slurm (57)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[3d/0bf91f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 81%] 13 of 16
+[2f/293824] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 76%] 10 of 13
+[4c/c33ee0] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 13
+
+executor >  slurm (57)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[3d/0bf91f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 81%] 13 of 16
+[2f/293824] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 76%] 10 of 13
+[4c/c33ee0] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 13
+
+executor >  slurm (58)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[2f/293824] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 71%] 10 of 14
+[44/1cb1ea] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 14
+
+executor >  slurm (59)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[d8/6ff4a7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 71%] 10 of 14
+[44/1cb1ea] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 14
+
+executor >  slurm (59)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[d8/6ff4a7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 71%] 10 of 14
+[7d/4a9848] process > MARSQ_MAP_ONLY:SplitBamAndS... [  7%] 1 of 14
+
+executor >  slurm (60)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[2f/293824] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 78%] 11 of 14
+[01/ec7f3e] process > MARSQ_MAP_ONLY:SplitBamAndS... [  7%] 1 of 14
+
+executor >  slurm (61)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[1a/3e79ca] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 78%] 11 of 14
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 14%] 2 of 14
+
+executor >  slurm (61)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[1a/3e79ca] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 78%] 11 of 14
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 14%] 2 of 14
+
+executor >  slurm (61)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[d8/6ff4a7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 85%] 12 of 14
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 14%] 2 of 14
+
+executor >  slurm (62)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[33/09c8b7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 85%] 12 of 14
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 14%] 2 of 14
+
+executor >  slurm (62)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[33/09c8b7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 85%] 12 of 14
+[67/dd81f2] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 14%] 2 of 14
+
+executor >  slurm (63)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[1a/3e79ca] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 92%] 13 of 14
+[43/1b217c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 14%] 2 of 14
+
+executor >  slurm (63)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[1a/3e79ca] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 92%] 13 of 14
+[77/bb1a02] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 21%] 3 of 14
+
+executor >  slurm (63)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[4f/4ca823] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 87%] 14 of 16
+[33/09c8b7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 14 of 14
+[77/bb1a02] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 21%] 3 of 14
+
+executor >  slurm (64)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[33/09c8b7] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 14 of 15
+[7c/e12019] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 20%] 3 of 15
+
+executor >  slurm (65)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[76/90e929] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 14 of 15
+[7c/e12019] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 20%] 3 of 15
+
+executor >  slurm (65)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[76/90e929] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 14 of 15
+[d4/e76589] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 26%] 4 of 15
+
+executor >  slurm (65)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[76/90e929] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 14 of 15
+[80/06f93e] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 33%] 5 of 15
+
+executor >  slurm (65)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[76/90e929] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 14 of 15
+[38/48bb71] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 40%] 6 of 15
+
+executor >  slurm (65)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[76/90e929] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 15 of 15
+[38/48bb71] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 40%] 6 of 15
+
+executor >  slurm (65)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[da/a670eb] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 93%] 15 of 16
+[76/90e929] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 15 of 15
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 46%] 7 of 15
+
+executor >  slurm (66)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 15 of 16
+[ee/e49bd1] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 43%] 7 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 15 of 16
+[b3/61836c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 50%] 8 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 15 of 16
+[b3/61836c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 50%] 8 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 93%] 15 of 16
+[4c/c33ee0] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 56%] 9 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[4c/c33ee0] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 56%] 9 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[44/1cb1ea] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 62%] 10 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[df/f2cb25] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 68%] 11 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[df/f2cb25] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 68%] 11 of 16
+
+executor >  slurm (67)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b8/c887f6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 94%] 16 of 17
+[1c/394055] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 16 of 16
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[68/b3950b] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 75%] 12 of 16
+
+executor >  slurm (68)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 94%] 16 of 17
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[68/b3950b] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 75%] 12 of 16
+
+executor >  slurm (68)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 94%] 16 of 17
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[43/1b217c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 81%] 13 of 16
+
+executor >  slurm (68)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 94%] 16 of 17
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[43/1b217c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 81%] 13 of 16
+
+executor >  slurm (68)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 94%] 16 of 17
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[7c/e12019] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 87%] 14 of 16
+
+executor >  slurm (68)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 94%] 16 of 17
+[43/bab0c5] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 16 of 16
+[01/ec7f3e] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 93%] 15 of 16
+
+executor >  slurm (70)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 17 of 17 ✔
+[66/f9f08f] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 94%] 16 of 17
+[38/09da66] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 88%] 15 of 17
+
+executor >  slurm (70)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 17 of 17 ✔
+[66/f9f08f] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 94%] 16 of 17
+[38/09da66] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 88%] 15 of 17
+
+executor >  slurm (70)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 17 of 17 ✔
+[66/f9f08f] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 94%] 16 of 17
+[b3/61836c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 94%] 16 of 17
+
+executor >  slurm (70)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 17 of 17 ✔
+[66/f9f08f] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 17 of 17 ✔
+[b3/61836c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 94%] 16 of 17
+
+executor >  slurm (70)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 17 of 17 ✔
+[66/f9f08f] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 17 of 17 ✔
+[38/09da66] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 17 of 17 ✔
+
+executor >  slurm (70)
+[47/4f29b7] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[c2/bb97b3] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[2d/ea9bd0] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 17 of 17 ✔
+[dc/9d6a9f] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 17 of 17 ✔
+[66/f9f08f] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 17 of 17 ✔
+[38/09da66] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 17 of 17 ✔
+Completed at: 29-Nov-2023 13:52:28
+Duration    : 2h 31m 44s
+CPU hours   : 330.3
+Succeeded   : 70
+
+

@@ -13,66 +13,65 @@ nextflow.enable.dsl = 2
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    GENOME PARAMETER VALUES
+    PRINT PARAMETER SUMMARY
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// TODO nf-core: Remove this line if you don't need a FASTA file
-//   This is an example of how to use getGenomeAttribute() to fetch parameters
-//   from igenomes.config using `--genome`
-params.fasta = WorkflowMain.getGenomeAttribute(params, 'fasta')
+log.info """\
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : ${params.reads}
+ output       : ${params.outdir}
+ ref genomes  : ${params.ref_genomes_folder}
+ pipeline     : ${params.pipeline}
+ """
+
+// Raw reads
+Channel
+    .fromFilePairs( params.reads )
+    .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
+    .map { id, files ->
+        def modified_baseName = id.split('\\.')[0]
+        def meta = [ 'id': modified_baseName ]  // Create a meta map
+        tuple(meta, files)
+    }
+    .set {fastq_files}
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    VALIDATE & PRINT PARAMETER SUMMARY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    NAMED WORKFLOWS FOR PIPELINE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~S~~~~~~~~~~~~~~~~~~~
 */
 
-include { validateParameters; paramsHelp } from 'plugin/nf-validation'
-
-// Print help message if needed
-if (params.help) {
-    def logo = NfcoreTemplate.logo(workflow, params.monochrome_logs)
-    def citation = '\n' + WorkflowMain.citation(workflow) + '\n'
-    def String command = "nextflow run ${workflow.manifest.name} --input samplesheet.csv --genome GRCh37 -profile docker"
-    log.info logo + paramsHelp(command) + citation + NfcoreTemplate.dashedLine(params.monochrome_logs)
-    System.exit(0)
-}
-
-// Validate input parameters
-if (params.validate_params) {
-    validateParameters()
-}
-
-WorkflowMain.initialise(workflow, params, log)
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    NAMED WORKFLOW FOR PIPELINE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-include { MARSQ } from './workflows/marsq'
+include { MARSQ_FULL; MARSQ_MAP_ONLY } from './workflows/marsq'
 
 //
 // WORKFLOW: Run main nf-core/marsq analysis pipeline
 //
-workflow NFCORE_MARSQ {
-    MARSQ ()
-}
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    RUN ALL WORKFLOWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-//
-// WORKFLOW: Execute a single named workflow for the pipeline
-// See: https://github.com/nf-core/rnaseq/issues/619
-//
 workflow {
-    NFCORE_MARSQ ()
+    if (params.pipeline == null || params.pipeline == "help") {
+        println helpMessage
+    }
+    else if ( params.pipeline == "full_workflow" ) {
+        MARSQ_FULL( fastq_files )
+    }
+    else if ( params.pipeline == "full_bbplit" ) {
+        MARSQ_BBSPLIT( fastq_files )
+    }
+    else if ( params.pipeline == "map_only" ) {
+        MARSQ_MAP_ONLY ( fastq_files )
+    }
+    else {
+        println "ERROR ################################################################"
+        println "Must select a pipeline"
+        println ""
+        println "To test the pipeline, use the \"demo\" pipeline or omit the pipeline flag:"
+        println ""
+        println "ERROR ################################################################"
+        println "Exiting ..."
+        System.exit(0)
+    }
 }
 
 /*

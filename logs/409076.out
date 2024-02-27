@@ -1,0 +1,33 @@
+Some Usable Environment Variables:
+=================================
+hostname=f02-17.cluster
+$SLURM_JOB_ID=409076
+$SLURM_NTASKS=1
+$SLURM_NTASKS_PER_NODE=1
+$SLURM_CPUS_PER_TASK=2
+$SLURM_JOB_CPUS_PER_NODE=2
+$SLURM_MEM_PER_NODE=4000
+Loading nextflow/23.04.1
+  Loading requirement: java/17.0.1
+Loading singularity/3.8.7
+  Loading requirement: go/1.17.2
+N E X T F L O W  ~  version 23.04.1
+Launching `main.nf` [awesome_swirles] DSL2 - revision: 5f0e20e632
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : /tmp/marsq/fastq/*{R1,R2}.fastq.gz
+ output       : /tmp/marsq/results
+ ref genomes  : /tmp/marsq/refs
+ pipeline     : map_only
+ 
+ERROR ~ Module compilation error
+- file : /mnt/data/GROUP-smbpk/sbidp3/metamapping/nf-core-marsq/./workflows/../modules/local/SplitBamAndStats.nf
+- cause: token recognition error at: '3' @ line 71, column 20.
+               split($3, arr, "_%_");
+                      ^
+
+1 error
+
+
+ -- Check script './workflows/marsq.nf' at line: 20 or see '.nextflow.log' file for more details
+Cannot find any reads matching: /tmp/marsq/fastq/*{R1,R2}.fastq.gz

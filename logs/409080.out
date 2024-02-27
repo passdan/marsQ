@@ -1,0 +1,663 @@
+Some Usable Environment Variables:
+=================================
+hostname=f02-17.cluster
+$SLURM_JOB_ID=409080
+$SLURM_NTASKS=1
+$SLURM_NTASKS_PER_NODE=1
+$SLURM_CPUS_PER_TASK=2
+$SLURM_JOB_CPUS_PER_NODE=2
+$SLURM_MEM_PER_NODE=4000
+Loading nextflow/23.04.1
+  Loading requirement: java/17.0.1
+Loading singularity/3.8.7
+  Loading requirement: go/1.17.2
+N E X T F L O W  ~  version 23.04.1
+Launching `main.nf` [amazing_keller] DSL2 - revision: 5f0e20e632
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : /tmp/marsq/fastq/*{R1,R2}.fastq.gz
+ output       : /tmp/marsq/results
+ ref genomes  : /tmp/marsq/refs
+ pipeline     : map_only
+ 
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (1)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (2)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (2)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (2)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b9/e016e3] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 33%] 1 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b9/e016e3] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 33%] 1 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (6)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[b9/e016e3] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 33%] 1 of 3
+[b5/149fea] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 1
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (6)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 66%] 2 of 3
+[b5/149fea] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (7)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[f3/5a91cb] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [ 66%] 2 of 3
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 2
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (7)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (8)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (8)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [  0%] 0 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+executor >  slurm (9)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b5/149fea] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 33%] 1 of 3
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  [  0%] 0 of 1
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 1
+
+executor >  slurm (10)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b5/149fea] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 33%] 1 of 3
+[7b/86e81b] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [  0%] 0 of 1
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 1
+
+executor >  slurm (10)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b5/149fea] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 33%] 1 of 3
+[7b/86e81b] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [  0%] 0 of 1
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 1
+
+executor >  slurm (10)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b5/149fea] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 33%] 1 of 3
+[7b/86e81b] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 1 of 1
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 1
+
+executor >  slurm (10)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 2 of 3
+[7b/86e81b] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 1 of 2
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (12)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 2 of 3
+[a6/ba8bc4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 1 of 2
+[17/46f68f] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (12)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 2 of 3
+[a6/ba8bc4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 50%] 1 of 2
+[17/46f68f] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (12)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 2 of 3
+[a6/ba8bc4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 2 of 2
+[17/46f68f] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 2
+
+executor >  slurm (12)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[b1/b439b0] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [ 66%] 2 of 3
+[a6/ba8bc4] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 2 of 2
+[17/46f68f] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 2 of 3
+[57/29cf2a] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 2 of 3
+[57/29cf2a] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 2 of 3
+[57/29cf2a] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 3
+Execution cancelled -- Finishing pending tasks before exit
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [ 66%] 2 of 3
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 33%] 1 of 3, failed: 1
+Execution cancelled -- Finishing pending tasks before exit
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3 ✔
+[aa/8679b6] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 33%] 1 of 3, failed: 1
+
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3 ✔
+[17/46f68f] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 66%] 2 of 3, failed: 2
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3 ✔
+[17/46f68f] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 66%] 2 of 3, failed: 2
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3 ✔
+[57/29cf2a] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 3 of 3, failed: 3 ✘
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+
+executor >  slurm (14)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1 ✔
+[c5/0b87a6] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 3 of 3 ✔
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 3 of 3 ✔
+[40/901359] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 3 of 3 ✔
+[57/29cf2a] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 3 of 3, failed: 3 ✘
+ERROR ~ Error executing process > 'MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)'
+
+Caused by:
+  Process `MARSQ_MAP_ONLY:SplitBamAndStats (FF_April2023_S32)` terminated with an error exit status (1)
+
+Command executed:
+
+  samtools view -@12 -o FF_April2023_S32.sam FF_April2023_S32_sort.bam
+  
+  mkdir FF_April2023_S32_mapped_genomes
+  mkdir FF_April2023_S32_mapped_genomes_stats
+  
+  for genome in refs/*.fna; do
+      genome_base=$(basename $genome .fna | cut -d'_' -f1,2)
+  
+      cat '@HD VN:1.6 SO:coordinate' > FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam
+  done
+  
+  awk -F'	' -v meta_id="FF_April2023_S32" '{
+      split($3, arr, "_%_");
+      genome_filename = meta_id "_mapped_genomes/" meta_id "_" arr[1] ".sam";
+      if (!seen[genome_filename]++) {
+          print "@HD VN:1.6 SO:coordinate" > genome_filename;
+      }
+      print >> genome_filename
+  }' "FF_April2023_S32.sam"
+  
+  
+  samtools coverage FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats.txt
+  samtools coverage -m FF_April2023_S32_mapped_genomes/FF_April2023_S32_${genome_base}.sam > FF_April2023_S32_mapped_genomes_stats/FF_April2023_S32_${genome_base}_coverage_stats_graphic.txt
+  
+  ##samtools view -@12 -bo FF_April2023_S32_${genome_base}.bam FF_April2023_S32_${genome_base}.sam
+  ##rm FF_April2023_S32_${genome_base}.sam
+  done
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  cat: can't open '@HD VN:1.6 SO:coordinate': No such file or directory
+
+Work dir:
+  /tmp/marsq/work/aa/8679b65ca1e41553d78b01003462be
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+
+ -- Check '.nextflow.log' file for details
+

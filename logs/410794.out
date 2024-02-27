@@ -1,0 +1,128 @@
+Some Usable Environment Variables:
+=================================
+hostname=f02-17.cluster
+$SLURM_JOB_ID=410794
+$SLURM_NTASKS=1
+$SLURM_NTASKS_PER_NODE=1
+$SLURM_CPUS_PER_TASK=2
+$SLURM_JOB_CPUS_PER_NODE=2
+$SLURM_MEM_PER_NODE=4000
+Loading nextflow/23.04.1
+  Loading requirement: java/17.0.1
+Loading singularity/3.8.7
+  Loading requirement: go/1.17.2
+N E X T F L O W  ~  version 23.04.1
+Launching `main.nf` [kickass_faraday] DSL2 - revision: 5f0e20e632
+ MARSQ   N F   P I P E L I N E
+ ===================================
+ reads        : /tmp/marsq/fastq/*{R1,R2}.fastq.gz
+ output       : /tmp/marsq/results
+ ref genomes  : /tmp/marsq/refs
+ pipeline     : map_only
+ 
+[-        ] process > MARSQ_MAP_ONLY:ConcatenateG... -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_INDEX     -
+[-        ] process > MARSQ_MAP_ONLY:BBMAP_ALIGN     -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_SORT   -
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[b9/e016e3] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 2 of 2, cached: 2
+[49/4892bf] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 2 of 2, cached: 2
+[-        ] process > MARSQ_MAP_ONLY:SAMTOOLS_INDEX  -
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[1a/967db6] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 4 of 4, cached: 4
+[7b/86e81b] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 1 of 1, cached: 1
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... -
+
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[-        ] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 5
+
+executor >  slurm (4)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[1a/3a399c] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[71/869592] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[71/869592] process > MARSQ_MAP_ONLY:SplitBamAndS... [  0%] 0 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[c7/5b5bd8] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 20%] 1 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[1a/3a399c] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 40%] 2 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[2f/5d0c2a] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 60%] 3 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[e1/0615f5] process > MARSQ_MAP_ONLY:SplitBamAndS... [ 80%] 4 of 5
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[71/869592] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 5 of 5 ✔
+
+executor >  slurm (5)
+[56/a91a0c] process > MARSQ_MAP_ONLY:ConcatenateG... [100%] 1 of 1, cached: 1 ✔
+[1a/082644] process > MARSQ_MAP_ONLY:BBMAP_INDEX ... [100%] 1 of 1, cached: 1 ✔
+[12/8eb53f] process > MARSQ_MAP_ONLY:BBMAP_ALIGN ... [100%] 5 of 5, cached: 5 ✔
+[f1/6b9e67] process > MARSQ_MAP_ONLY:SAMTOOLS_SOR... [100%] 5 of 5, cached: 5 ✔
+[5b/71f306] process > MARSQ_MAP_ONLY:SAMTOOLS_IND... [100%] 5 of 5, cached: 5 ✔
+[71/869592] process > MARSQ_MAP_ONLY:SplitBamAndS... [100%] 5 of 5 ✔
+Completed at: 14-Nov-2023 14:36:38
+Duration    : 5m 13s
+CPU hours   : 68.6 (94.3% cached)
+Succeeded   : 5
+Cached      : 17
+
+
